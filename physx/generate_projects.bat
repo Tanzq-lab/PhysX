@@ -5,6 +5,10 @@
 call "%~dp0\buildtools\packman\packman" init
 set "PYTHONPATH=%PM_MODULE_DIR%;%PYTHONPATH%"
 
+if exist "D:/Program Files/CMake/bin/cmake.exe" (
+    SET "PM_cmake_PATH=D:/Program Files/CMake"
+)
+
 IF %1.==. GOTO ADDITIONAL_PARAMS_MISSING
 
 :: Run packman to ensure dependencies are present and run cmake generation script afterwards
